@@ -1,14 +1,22 @@
+const express = require('express');
 const http = require('http');
+const routes = require('./routes/index');
 
-const hostname = '127.0.0.1';
+const app = express();
 const port = 8080;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+app.use((req, res, next) => {
+	console.log("this is where we would verify");
+	next();
 });
+routes(app);
+http.createServer(app).listen(8080);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+console.log('Server started on: ' + port);
+
+
+/*
+	resources:
+		https://expressjs.com/en/api.html
+
+*/

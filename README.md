@@ -11,4 +11,6 @@ once completed run `npm start`
 
 To start the back end:
 cd into back_end
+run `npm i`
 run `node app.js`
+navigate to `http://localhost:8080/url`
