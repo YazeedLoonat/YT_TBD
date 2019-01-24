@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Paper, Grid } from '@material-ui/core';
+
 const request = require("request");
 
 class App extends Component {
@@ -17,25 +18,23 @@ class App extends Component {
 			}
 		);
 	}
-
 	render() {
 		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-						Edit <code>src/App.js</code> and save to reload.
-					</p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-				</header>
-			</div>
+			<Paper className="App">
+				<Grid container spacing={16}>
+					<Grid item xs={12}>
+						<Grid container justify="center">
+							{[0, 1, 2].map(value => (
+								<Grid key={value} item>
+									<Paper>
+										Ayy
+									</Paper>
+								</Grid>
+							))}
+						</Grid>
+					</Grid>
+				</Grid>
+			</Paper>
 		);
 	}
 }
