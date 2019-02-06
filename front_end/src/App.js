@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Login from './login/index'
 import { Paper, Grid } from '@material-ui/core';
 
 const request = require("request");
@@ -20,21 +21,24 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<Paper className="App">
-				<Grid container spacing={16}>
-					<Grid item xs={12}>
-						<Grid container justify="center">
-							{[0, 1, 2].map(value => (
-								<Grid key={value} item>
-									<Paper>
-										Ayy
-									</Paper>
-								</Grid>
-							))}
+			<div style={ {height:"100vh"} }>
+				<Login />
+				<Paper className="App">
+					<Grid container spacing={16}>
+						<Grid item xs={12}>
+							<Grid container justify="center">
+								{[0, 1, 2].map(value => (
+									<Grid key={value} item>
+										<Paper>
+											Ayy
+										</Paper>
+									</Grid>
+								))}
+							</Grid>
 						</Grid>
 					</Grid>
-				</Grid>
-			</Paper>
+				</Paper>
+			</div>
 		);
 	}
 }

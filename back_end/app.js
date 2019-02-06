@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 	next();
 });
 routes(app);
-http.createServer(app).listen(8080);
+http.createServer(app).listen(port);
 
 console.log('Server started on: ' + port);
 
