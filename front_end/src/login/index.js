@@ -46,9 +46,10 @@ class Login extends Component {
 					password:this.state.password
 				}
 			},
-			(err,httpResponse,body) => {
-				console.log("err:", err);
-				console.log("httpResponse:", httpResponse);
+			(err,resp,body) => {
+				if ( err || ( resp && resp.statusCode !== 200 )) {
+					console.log("do something");
+				}
 				console.log("body:", body);
 			}
 		);
