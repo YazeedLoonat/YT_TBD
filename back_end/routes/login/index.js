@@ -1,13 +1,13 @@
-const post = ( req, res ) =>  {
-	console.log(req.body);
-	const { email, password } = req.body;
+const auth = require("../../Auth");
 
+const post = ( req, res ) =>  {
+	const { email, password } = req.body;
 	//TODO: hit db for this
 	if (email === "test@test.test" && password === "test") {
-		res.json("yeah boy");
+		res.json(auth.createToken({info: "yeahboy"}));
 	}
 	else {
-		res.json(["hello"]);
+		throw new Error("The email/password is invalid");
 	}
 };
 module.exports = { post };

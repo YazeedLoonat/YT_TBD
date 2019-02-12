@@ -50,7 +50,7 @@ class Login extends Component {
 				if ( err || ( resp && resp.statusCode !== 200 )) {
 					console.log("do something");
 				}
-				console.log("body:", body);
+				localStorage.setItem("YT_TBD_BEARER", body);
 			}
 		);
 	};

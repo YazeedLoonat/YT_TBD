@@ -9,6 +9,7 @@
   "author": "Yazeed & Treavor",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0"
   }
 }
