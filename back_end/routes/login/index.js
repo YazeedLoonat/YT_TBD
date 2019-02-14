@@ -4,10 +4,11 @@ const post = ( req, res ) =>  {
 	const { email, password } = req.body;
 	//TODO: hit db for this
 	if (email === "test@test.test" && password === "test") {
-		res.json(auth.createToken({info: "yeahboy"}));
+		const toSign = {info: "yeahboy"};
+		res.json({token: auth.createToken(toSign)});
 	}
 	else {
-		throw new Error("The email/password is invalid");
+		res.json({ failed: 1 });
 	}
 };
 module.exports = { post };
