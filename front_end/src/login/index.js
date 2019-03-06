@@ -76,6 +76,10 @@ class Login extends Component {
 
 	render() {
 		const { isModalOpen, isSnackBarOpen, snackBarMessage } = this.state;
+		const { toDisplay } = this.props;
+		if ( !toDisplay ) {
+			return null;
+		}
 		return (
 			<div style={ {padding: "10px"} }>
 				<Button onClick={ this.openModal }>
